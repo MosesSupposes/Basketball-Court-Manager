@@ -2,6 +2,15 @@
 let make = (~queue: list(Team.t)) => {
   let minWaitTime = queue->List.length->float_of_int->(x => x *. 8.5);
   let maxWaitTime = queue->List.length->float_of_int->(x => x *. 12.5);
+  let roundedDown = Js.Math.floor;
 
-  {j|Estimated wait time: $minWaitTime - $maxWaitTime minutes.|j};
+  <div>
+    {React.string(
+       "Estimated wait time: "
+       ++ minWaitTime->roundedDown->string_of_int
+       ++ " - "
+       ++ maxWaitTime->roundedDown->string_of_int
+       ++ " minutes.",
+     )}
+  </div>;
 };
