@@ -5,10 +5,12 @@ let make = (~teams: list(Team.t)) => {
       (team: Team.t) =>
         <div>
           <h1> team.name->React.string </h1>
-          <p> {team.captain->(x => x ++ "'s team'")->React.string} </p>
+          <p> {team.captain->(x => x ++ "'s team")->React.string} </p>
         </div>,
       teams,
     );
 
-  <div> {renderTeamList() |> Array.of_list |> ReasonReact.array} </div>;
+  <div className="team-list">
+    {renderTeamList() |> Array.of_list |> ReasonReact.array}
+  </div>;
 };

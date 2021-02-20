@@ -9,12 +9,15 @@ let make = () => {
       ]
     );
 
+  let (shouldShowWaitTime, setShouldShowWaitTime) =
+    React.useState(() => false);
+
   let addNewTeam = (team: Team.t) =>
     setTeams(prevTeams => [team, ...prevTeams]);
 
   <main>
-    <TeamCreator update=addNewTeam />
+    <TeamCreator update=addNewTeam renderWaitTime=setShouldShowWaitTime />
     <TeamList teams />
-    <WaitTime queue=teams />
+    <WaitTime queue=teams shouldShowWaitTime />
   </main>;
 };

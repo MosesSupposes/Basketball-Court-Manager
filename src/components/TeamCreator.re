@@ -3,7 +3,7 @@ type input =
   | Captain;
 
 [@react.component]
-let make = (~update) => {
+let make = (~update, ~renderWaitTime) => {
   let (teamInfo: Team.t, setTeamInfo) =
     React.useState(() => ({name: "", captain: ""}: Team.t));
 
@@ -27,8 +27,9 @@ let make = (~update) => {
 
   let handleSubmit = (update, event) => {
     ReactEvent.Form.preventDefault(event);
-    update(teamInfo);
     setTeamInfo(_ => {name: "", captain: ""});
+    update(teamInfo);
+    renderWaitTime(_ => true);
   };
 
   <form onSubmit={handleSubmit(update)}>
