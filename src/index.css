@@ -8,7 +8,15 @@ main {
   padding: 20px;
 }
 
-.counter {
-  padding: 20px;
-  display: inline-block;
+.team-list {
+  padding: 15px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.wait-time {
+  padding: 15px;
+  background: green;
+  font-weight: bold;
+  border: 2px solid black;
 }
