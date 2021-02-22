@@ -19,5 +19,6 @@ let make = () => {
     <TeamCreator update=addNewTeam renderWaitTime=setShouldShowWaitTime />
     <TeamList teams />
     <WaitTime queue=teams shouldShowWaitTime />
+    <GameOver setTeams />
   </main>;
 };
