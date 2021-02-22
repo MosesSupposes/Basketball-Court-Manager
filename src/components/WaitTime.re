@@ -6,13 +6,15 @@ let make = (~queue: list(Team.t), ~shouldShowWaitTime: bool) => {
 
   shouldShowWaitTime
     ? <div className="wait-time">
-        {React.string(
-           "Estimated wait time: "
-           ++ minWaitTime->roundedDown->string_of_int
-           ++ " - "
-           ++ maxWaitTime->roundedDown->string_of_int
-           ++ " minutes.",
-         )}
+        {List.length(queue) > 1
+           ? React.string(
+               "Estimated wait time: "
+               ++ minWaitTime->roundedDown->string_of_int
+               ++ " - "
+               ++ maxWaitTime->roundedDown->string_of_int
+               ++ " minutes.",
+             )
+           : "Estimated wait time: 0 min"->React.string}
       </div>
     : <div />;
 };
