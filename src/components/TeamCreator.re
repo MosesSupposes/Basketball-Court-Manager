@@ -32,7 +32,7 @@ let make = (~update, ~renderWaitTime) => {
     renderWaitTime(_ => true);
   };
 
-  <form onSubmit={handleSubmit(update)}>
+  <form className="register-team" onSubmit={handleSubmit(update)}>
     <h2> "Register your team"->React.string </h2>
     <label>
       "Team Name: "->React.string
@@ -50,6 +50,8 @@ let make = (~update, ~renderWaitTime) => {
         value={teamInfo.captain}
       />
     </label>
-    <button type_="submit"> "Join Queue"->React.string </button>
+    <button className="join-queue" type_="submit">
+      "Join Queue"->React.string
+    </button>
   </form>;
 };

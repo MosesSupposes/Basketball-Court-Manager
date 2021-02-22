@@ -21,3 +21,15 @@ main {
   font-weight: bold;
   border: 2px solid black;
 }
+
+.register-team {
+  margin-bottom: 1rem;
+}
+
+.register-team label:nth-child(odd) {
+  margin-left: 0.5rem;
+}
+
+.join-queue {
+  margin-left: 0.75rem;
+}
