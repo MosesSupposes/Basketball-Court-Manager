@@ -4,15 +4,15 @@ let make = (~queue: list(Team.t), ~shouldShowWaitTime: bool) => {
   let maxWaitTime = queue->List.length->float_of_int->(x => x *. 12.5);
   let roundedDown = Js.Math.floor;
 
-  <div className="wait-time">
-    {shouldShowWaitTime
-       ? React.string(
+  shouldShowWaitTime
+    ? <div className="wait-time">
+        {React.string(
            "Estimated wait time: "
            ++ minWaitTime->roundedDown->string_of_int
            ++ " - "
            ++ maxWaitTime->roundedDown->string_of_int
            ++ " minutes.",
-         )
-       : <div />}
-  </div>;
+         )}
+      </div>
+    : <div />;
 };
