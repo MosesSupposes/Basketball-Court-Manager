@@ -32,6 +32,9 @@ main {
 
 .join-queue {
   margin-left: 0.75rem;
+  color: white;
+  background-color: black;
+  padding: 0.5rem;
 }
 
 .game-over-btn {
