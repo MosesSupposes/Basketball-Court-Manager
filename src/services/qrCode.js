@@ -12,13 +12,15 @@ const genQRCode = ({
     height: 300,
     data: data,
     image: image || null,
-    dataOptions: dataOptions || { color: "#4267b2", type: "rounded" },
+    dataOptions: { ...dataOptions, type: dataOptions.type_ } || {
+      color: "#4267b2",
+      type: "rounded",
+    },
     backgroundOptions: backgroundOptions || { color: "#e9ebee" },
     imageOptions: imageOptions || { crossOrigin: "anonymous", margin: 20 },
   });
 
-const renderQRCode = (qrCode, target) => {
-  const targetNode = document.getElementById(target);
+const renderQRCode = (qrCode, targetNode) => {
   qrCode.append(targetNode);
   return targetNode;
 };
