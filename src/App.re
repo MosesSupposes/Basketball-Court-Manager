@@ -20,5 +20,6 @@ let make = () => {
     <TeamList teams />
     <WaitTime queue=teams shouldShowWaitTime />
     <GameOver setTeams />
+    <QRCode dataToEncode="MosesSupposes rocks" />
   </main>;
 };
