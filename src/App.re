@@ -20,6 +20,7 @@ let make = () => {
     <TeamList teams />
     <WaitTime queue=teams shouldShowWaitTime />
     <GameOver setTeams />
-    <QRCode dataToEncode="MosesSupposes rocks" />
   </main>;
+  /* This is broken for some reason. I believe it's an issue with the import. */
+  /*<QRCode dataToEncode="MosesSupposes rocks" />*/
 };
