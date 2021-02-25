@@ -24,7 +24,7 @@ type imageOptions('a) =
 let make =
     (
       ~dataToEncode: string,
-      ~imgToEncode: option(string),
+      ~imgToEncode: option(string)=?,
       ~width: option(int)=?,
       ~height: option(int)=?,
       ~dataOptions: option(dataOptions('a))=?,
