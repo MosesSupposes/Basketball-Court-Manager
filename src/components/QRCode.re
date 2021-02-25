@@ -42,5 +42,5 @@ let make =
 
   let canvas = <canvas id="qrCode" />;
 
-  qrCode##renderQRCode(newlyGeneratedQRCode, canvas);
+  <div> {qrCode##renderQRCode(newlyGeneratedQRCode, canvas)} </div>;
 };
