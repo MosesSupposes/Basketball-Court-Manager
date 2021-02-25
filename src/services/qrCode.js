@@ -12,7 +12,10 @@ const genQRCode = ({
     height: 300,
     data: data,
     image: image || null,
-    dataOptions: { ...dataOptions, type: dataOptions.type_ } || {
+    dataOptions: (dataOptions && {
+      ...dataOptions,
+      type: dataOptions.type_,
+    }) || {
       color: "#4267b2",
       type: "rounded",
     },
