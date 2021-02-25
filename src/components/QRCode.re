@@ -23,13 +23,13 @@ type imageOptions('a) =
 [@react.component]
 let make =
     (
-      ~width: option(int)=?,
-      ~height: option(int)=?,
       ~dataToEncode: string,
       ~imgToEncode: string,
-      ~dataOptions: dataOptions('a),
-      ~backgroundOptions: backgroundOptions('b),
-      ~imageOptions: imageOptions('c),
+      ~width: option(int)=?,
+      ~height: option(int)=?,
+      ~dataOptions: option(dataOptions('a))=?,
+      ~backgroundOptions: option(backgroundOptions('b))=?,
+      ~imageOptions: option(imageOptions('c))=?,
     ) => {
   let newlyGeneratedQRCode =
     qrCode##genQRCode({
